@@ -2,7 +2,7 @@ import './App.css';
 import ButtonComponent from './components/ButtonComponent';
 import ImageComponent from './components/ImageComponent';
 const nomi = ['Salva', 'Reset', 'Cancella']
-const scelto = nomi[Math.floor(Math.random() * 3)]
+let scelto = nomi[Math.floor(Math.random() * 3)]
 function App() {
   return (
     <div className="App">
