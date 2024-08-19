@@ -20,7 +20,7 @@ class ButtonComponentDynamic extends Component {
                     onChange={this.handleChange}
                     value={this.state.value}
                 />
-                <button className="button d-block">{this.state.nome}</button>
+                <button className="button d-block">{this.state.nome || 'Inserisci'}</button>
             </div>
         );
     }
