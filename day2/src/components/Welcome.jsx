@@ -25,7 +25,7 @@ function Welcome() {
 
                     {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
                 </Col>
-                <Col>
+                <Col className="mt-4">
                     <h1 className="text-center">Bacheca Libri</h1>
                 </Col>
             </Row>
