@@ -38,17 +38,7 @@
 }
 
 img {
-  height: 200px;
+  aspect-ratio: 12 / 16;
 }
 
-@media screen and (min-width:576px) {
-  img {
-    height: 300px;
-  }
-}
-@media screen and (min-width:756px) {
-  img {
-    height: 350px;
-  }
-}
 
