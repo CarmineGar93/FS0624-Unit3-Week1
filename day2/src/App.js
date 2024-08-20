@@ -1,5 +1,6 @@
 import './App.css';
 import MyNav from './components/MyNav';
+import MyFooter from './components/MyFooter';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <header>
         <MyNav />
       </header>
+      <MyFooter />
     </div>
   );
 }
