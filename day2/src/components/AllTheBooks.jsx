@@ -29,7 +29,7 @@ class AllTheBooks extends Component {
                         <h2>{this.props.genere.toUpperCase()}</h2>
                     </Col>
                 </Row>
-                <Row xs={2} md={3} lg={6} className='gy-4'>
+                <Row xs={2} sm={3} lg={6} className='gy-4'>
                     {
                         random.map((libro) => {
                             return (
@@ -37,7 +37,7 @@ class AllTheBooks extends Component {
                                     <Card className='h-100'>
                                         <Card.Img variant="top" src={libro.img} />
                                         <Card.Body className='d-flex flex-column justify-content-between'>
-                                            <Card.Title className='fs-6'>{libro.title}</Card.Title>
+                                            <Card.Title className='fs-5'>{libro.title}</Card.Title>
                                             <Button variant="primary">$ {libro.price}</Button>
                                         </Card.Body>
                                     </Card>
