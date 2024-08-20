@@ -17,6 +17,11 @@ const jSons = {
 class AllTheBooks extends Component {
     render() {
         const data = jSons[this.props.genere]
+        const random = []
+        for (let i = 0; i < 6; i++) {
+            let nRandom = Math.floor(Math.random() * data.length)
+            random.push(data[nRandom])
+        }
         return (
             <Container fluid className='mb-5'>
                 <Row>
@@ -26,7 +31,7 @@ class AllTheBooks extends Component {
                 </Row>
                 <Row xs={2} md={3} lg={6} className='gy-4'>
                     {
-                        data.slice(0,6).map((libro) => {
+                        random.map((libro) => {
                             return (
                                 <Col key={libro.asin}>
                                     <Card className='h-100'>
