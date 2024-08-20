@@ -24,17 +24,15 @@ class AllTheBooks extends Component {
                         <h2>{this.props.genere.toUpperCase()}</h2>
                     </Col>
                 </Row>
-                <Row xs={2} md={4} lg={6}>
+                <Row xs={2} md={3} lg={6} className='gy-4'>
                     {
                         data.slice(0,6).map((libro) => {
                             return (
-                                <Col>
+                                <Col key={libro.asin}>
                                     <Card className='h-100'>
                                         <Card.Img variant="top" src={libro.img} />
-                                        <Card.Body>
-                                            <Card.Title>{libro.title}</Card.Title>
-                                            <Card.Text>
-                                            </Card.Text>
+                                        <Card.Body className='d-flex flex-column justify-content-between'>
+                                            <Card.Title className='fs-6'>{libro.title}</Card.Title>
                                             <Button variant="primary">$ {libro.price}</Button>
                                         </Card.Body>
                                     </Card>
