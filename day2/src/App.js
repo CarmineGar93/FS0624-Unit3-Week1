@@ -2,6 +2,7 @@ import './App.css';
 import MyNav from './components/MyNav';
 import MyFooter from './components/MyFooter';
 import Welcome from './components/Welcome';
+import BookList from './components/BookList';
 /* import AllTheBooks from './components/AllTheBooks'; */
 import SingleBook from './components/SingleBook';
 import fantasy from './data/fantasy.json'
@@ -28,6 +29,7 @@ function App() {
       <main>
         <Welcome />
         <SingleBook libro={jSons.fantasy[Math.floor(Math.random() * jSons.fantasy.length)]}/>
+        <BookList array={fantasy} />
         {/* <AllTheBooks genere="fantasy"/>
         <AllTheBooks genere="horror"/>
         <AllTheBooks genere="history"/>

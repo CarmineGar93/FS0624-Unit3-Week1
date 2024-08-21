@@ -9,10 +9,11 @@ class SingleBook extends Component {
         /* this.state.selected === false ? this.setState({ selected: true }) : this.setState({ selected: false }) */
         const sel = this.state.selected
         this.setState({selected: !sel})
+/*         e.target.parentNode.classList.toggle('shadow') */
         if (!sel) {
             e.target.parentNode.style.boxShadow = '8px 8px 8px 8px lightgray'
         } else {
-            e.target.parentNode.style.boxShadow = '1px 1px 1px 1px lightgray'
+            e.target.parentNode.style.boxShadow = '0px 0px 0px 0px lightgray'
         }
 
     }
