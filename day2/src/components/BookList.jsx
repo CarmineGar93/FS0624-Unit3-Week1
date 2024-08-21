@@ -12,6 +12,7 @@ class BookList extends Component {
         const filtered = this.props.array.filter((libro) => {
             return libro.title.toLowerCase().includes(this.state.searched.toLowerCase())
         })
+        const filtered2 = filtered.length > 30 ? filtered.slice(0, 30) : filtered
         return (
             <Container fluid className='mb-5'>
                 <Row className="j justify-content-center">
@@ -28,9 +29,9 @@ class BookList extends Component {
                 </Row>
                 <Row xs={2} sm={3} lg={6} className='gy-4'>
                     {
-                     filtered.map((libro) => {
+                     filtered2.map((libro, i) => {
                             return (
-                                <Col key={libro.asin}>
+                                <Col key={i}>
                                     <Card className='h-100'>
                                         <Card.Img variant="top" src={libro.img} />
                                         <Card.Body className='d-flex flex-column justify-content-between'>

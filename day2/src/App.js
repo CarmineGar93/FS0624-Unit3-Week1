@@ -12,14 +12,8 @@ import romance from './data/romance.json'
 import scifi from './data/scifi.json'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-const jSons = {
-  fantasy,
-  history,
-  horror,
-  romance,
-  scifi
-}
 
+const all = fantasy.concat(history.concat(horror.concat(romance.concat(scifi))))
 function App() {
   return (
     <div>
@@ -28,8 +22,8 @@ function App() {
       </header>
       <main>
         <Welcome />
-        <SingleBook libro={jSons.fantasy[Math.floor(Math.random() * jSons.fantasy.length)]}/>
-        <BookList array={fantasy} />
+        <SingleBook libro={all[Math.floor(Math.random() * all.length)]}/>
+        <BookList array={all} />
         {/* <AllTheBooks genere="fantasy"/>
         <AllTheBooks genere="horror"/>
         <AllTheBooks genere="history"/>
