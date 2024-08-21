@@ -1,5 +1,6 @@
 import { Component } from "react";
-import { Col, Container, Row, Button, Card, Form } from 'react-bootstrap'
+import { Col, Container, Row, Form } from 'react-bootstrap'
+import SingleBook from "./SingleBook";
 
 class BookList extends Component {
     state = {
@@ -32,13 +33,7 @@ class BookList extends Component {
                      filtered2.map((libro, i) => {
                             return (
                                 <Col key={i}>
-                                    <Card className='h-100'>
-                                        <Card.Img variant="top" src={libro.img} />
-                                        <Card.Body className='d-flex flex-column justify-content-between'>
-                                            <Card.Title className='fs-5'>{libro.title}</Card.Title>
-                                            <Button variant="primary">$ {libro.price}</Button>
-                                        </Card.Body>
-                                    </Card>
+                                    <SingleBook libro={libro}/>
                                 </Col>
                             )
                         })

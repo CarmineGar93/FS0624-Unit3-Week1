@@ -4,7 +4,7 @@ import MyFooter from './components/MyFooter';
 import Welcome from './components/Welcome';
 import BookList from './components/BookList';
 /* import AllTheBooks from './components/AllTheBooks'; */
-import SingleBook from './components/SingleBook';
+
 import fantasy from './data/fantasy.json'
 import history from './data/history.json'
 import horror from './data/horror.json'
@@ -22,7 +22,6 @@ function App() {
       </header>
       <main>
         <Welcome />
-        <SingleBook libro={all[Math.floor(Math.random() * all.length)]}/>
         <BookList array={all} />
         {/* <AllTheBooks genere="fantasy"/>
         <AllTheBooks genere="horror"/>
