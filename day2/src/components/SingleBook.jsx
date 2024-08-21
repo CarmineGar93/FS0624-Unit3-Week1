@@ -16,7 +16,7 @@ class SingleBook extends Component {
         return (
             <Container className='mb-5'>
                 <Row className='justify-content-center'>
-                    <Col xs={12} md={6} lg={4}>
+                    <Col xs={10} sm={8} md={6} lg={4}>
                         <Card className={cardClicked}>
                             <Card.Img variant="top" src={this.props.libro.img} onClick={(e) => this.handleClick(e)} />
                             <Card.Body className='d-flex flex-column justify-content-between'>
