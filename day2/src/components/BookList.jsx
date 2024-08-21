@@ -1,19 +1,17 @@
 import { Component } from "react";
 import { Col, Container, Row, Button, Card, Form } from 'react-bootstrap'
-let filter = []
+
 class BookList extends Component {
     state = {
-        searched: ''
+        searched: 'Ciao'
     }
     handleChange = (e) => {
         this.setState({searched: e.target.value})
-        filter = this.props.array.filter((libro) => {
-            return libro.title.indexOf(this.state.searched) !== -1
-
-        })
-        console.log(filter) 
     }
     render() {
+        const filtered = this.props.array.filter((libro) => {
+            return libro.title.toLowerCase().includes(this.state.searched.toLowerCase())
+        })
         return (
             <Container fluid className='mb-5'>
                 <Row className="j justify-content-center">
@@ -29,9 +27,8 @@ class BookList extends Component {
                     </Col>
                 </Row>
                 <Row xs={2} sm={3} lg={6} className='gy-4'>
-
                     {
-                        filter.map((libro) => {
+                     filtered.map((libro) => {
                             return (
                                 <Col key={libro.asin}>
                                     <Card className='h-100'>
