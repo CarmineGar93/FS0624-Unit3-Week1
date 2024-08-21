@@ -3,7 +3,7 @@ import { Col, Container, Row, Button, Card, Form } from 'react-bootstrap'
 
 class BookList extends Component {
     state = {
-        searched: 'Ciao'
+        searched: ''
     }
     handleChange = (e) => {
         this.setState({searched: e.target.value})
