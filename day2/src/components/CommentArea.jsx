@@ -1,6 +1,7 @@
 import { Component } from "react";
 import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
+import Loading from "./Loading";
 
 class CommentArea extends Component {
     state = {
@@ -38,6 +39,9 @@ class CommentArea extends Component {
     render() {
         return (
             <div>
+                {
+                    !this.state.isLoaded && <Loading />
+                }
                 {
                     this.state.isLoaded && <CommentsList array={this.state.comments} />
                 }                
