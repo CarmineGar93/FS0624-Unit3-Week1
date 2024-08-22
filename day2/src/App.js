@@ -1,4 +1,5 @@
 import './App.css';
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 import MyNav from './components/MyNav';
 import MyFooter from './components/MyFooter';
 import Welcome from './components/Welcome';
