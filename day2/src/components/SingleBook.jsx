@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import CommentArea from './CommentArea'
 
 class SingleBook extends Component {
     state = {
@@ -18,6 +19,9 @@ class SingleBook extends Component {
                 <Card.Img variant="top" src={this.props.libro.img} onClick={(e) => this.handleClick(e)} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                     <Card.Title className='fs-5'>{this.props.libro.title}</Card.Title>
+                    {
+                        this.state.selected && <CommentArea selectedId={this.props.libro.asin}/>
+                    }
                     <Button variant="primary">$ {this.props.libro.price}</Button>
                 </Card.Body>
             </Card>
