@@ -2,11 +2,13 @@ import { Component } from "react";
 import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
 import Loading from "./Loading";
+import { Alert } from 'react-bootstrap'
 
 class CommentArea extends Component {
     state = {
         comments: [],
-        isLoaded: false
+        isLoaded: false,
+        isError: false
     }
 
     componentDidMount = () => {
@@ -34,6 +36,10 @@ class CommentArea extends Component {
             }
         } catch (err) {
             alert(err)
+            this.setState({
+                isError: true,
+                isLoaded: true
+            })
         }
     }
     render() {
@@ -43,11 +49,22 @@ class CommentArea extends Component {
                     !this.state.isLoaded && <Loading />
                 }
                 {
-                    this.state.isLoaded && <CommentsList array={this.state.comments} />
-                }                
+                    this.state.isError && (
+                        <Alert variant='danger'>
+                            Oops. Something went wrong
+                            <i className="bi bi-exclamation-triangle"></i>
+                        </Alert>
+                    )
+                }
                 {
-                    this.state.isLoaded && <AddComment id={this.props.selectedId} />
-                }                
+                    this.state.isLoaded && !this.state.isError && (
+                        <>
+                            <CommentsList array={this.state.comments} />
+                            <AddComment id={this.props.selectedId} />
+                        </>
+
+                    )
+                }
             </div>
         )
     }
