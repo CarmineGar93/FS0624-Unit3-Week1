@@ -38,7 +38,7 @@ class CommentArea extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="mb-3">
                 {
                     !this.state.isLoaded && <Loading />
                 }

@@ -41,9 +41,9 @@ class AddComment extends Component {
     }
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Group className="mb-3">
-                    <Form.Label>Recensione</Form.Label>
+            <Form onSubmit={this.handleSubmit} className="mt-3">
+                <Form.Group className="mb-1">
+                    <Form.Label className="mb-1">Recensione</Form.Label>
                     <Form.Control 
                     type="text" 
                     placeholder="Scrivi la tua recensione"
@@ -51,7 +51,7 @@ class AddComment extends Component {
                     onChange={(e) => this.handleChange(e, 'comment')} />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Rating</Form.Label>
+                    <Form.Label className="mb-1">Rating</Form.Label>
                     <Form.Select 
                     aria-label="Default select example"
                     value={this.state.newComment.rating}
@@ -64,7 +64,7 @@ class AddComment extends Component {
                     </Form.Select>
                 </Form.Group>
                 <Button variant="success" type="submit">
-        Submit
+        Invia recensione
       </Button>
             </Form>
         )
