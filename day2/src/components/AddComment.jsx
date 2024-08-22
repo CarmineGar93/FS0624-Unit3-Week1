@@ -48,7 +48,7 @@ class AddComment extends Component {
                     type="text" 
                     placeholder="Scrivi la tua recensione"
                     value={this.state.newComment.comment}
-                    onChange={(e) => this.handleChange(e, 'comment')} />
+                    onChange={(e) => this.handleChange(e, 'comment')} required/>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className="mb-1">Rating</Form.Label>
